@@ -13,7 +13,7 @@ if ($_COOKIE['email'] != '') {
 if (!empty($_POST)) {
 	// ログインの処理
 	if ($_POST['email'] != '' && $_POST['password'] != '') {
-		$sql = sprintf('SELECT * FROM members WHERE email="%s" AND password="%s"',
+		$sql = sprintf('SELECT * FROM users WHERE email="%s" AND password="%s"',
 			mysqli_real_escape_string($db, $_POST['email']),
 			mysqli_real_escape_string($db, sha1($_POST['password']))
 		);

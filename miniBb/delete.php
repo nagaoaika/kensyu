@@ -12,12 +12,13 @@ if (isset($_SESSION['id'])) {
 	);
 	$record = mysqli_query($db, $sql) or die(mysqli_error($db));
 	$table = mysqli_fetch_assoc($record);
-	if ($table['created_user_id'] == $_SESSION['id']) {
-		// 削除
+	if ($table['user_id'] == $_SESSION['id']) {
+		//投稿の削除
 		$sql = sprintf('DELETE FROM posts WHERE id=%d', mysqli_real_escape_string($db, $id)
 		);
 		mysqli_query($db, $sql) or die(mysqli_error($db));
-		$sql = sprintf('DELETE FROM favorites WHERE post_id=%d',($_REQUEST['id'])
+		//お気に入りの削除
+		$sql = sprintf('DELETE FROM user_favorite_posts WHERE post_id=%d',($_REQUEST['id'])
 		);
 		$delete_favorites = $dbh->query($sql);
 	}

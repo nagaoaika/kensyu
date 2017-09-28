@@ -27,7 +27,7 @@ if (!empty($_POST)) {
 
 	// 重複アカウントのチェック
 	if (empty($error)) {
-		$sql = sprintf('SELECT COUNT(*) AS cnt FROM members WHERE email="%s"',
+		$sql = sprintf('SELECT COUNT(*) AS cnt FROM users WHERE email="%s"',
 			mysqli_real_escape_string($db, $_POST['email'])
 		);
 		$record = mysqli_query($db, $sql) or die(mysqli_error($db));
@@ -40,7 +40,7 @@ if (!empty($_POST)) {
 	if (empty($error)) {
 	// 画像をアップロードする　
 	$image = date('YmdHis') . $_FILES['image']['name'];
-	move_uploaded_file($_FILES['image']['tmp_name'], '../member_picture/' . $image);
+	move_uploaded_file($_FILES['image']['tmp_name'], '../user_picture/' . $image);
 
 	$_SESSION['join'] = $_POST;
 	$_SESSION['join']['image'] = $image;

@@ -138,10 +138,18 @@ li {
 .msg p {
 	margin: 0;
 }
+.msg .name {
+	font-weight: bold
+}
 .msg .day,
+.msg .post_bottom,
 .msg .day a {
 	font-size: 80%;
 	color: #999;
+}
+.msg form {
+	 display: inline;
+	 margin-left: 15px;
 }
 .favorite{
 	border: 0px;
@@ -154,4 +162,45 @@ li {
 	width: 100px;
 	height: 30px;
 	background: url(fovorited.png) left top no-repeat;
+}
+
+.square_btn{
+    display: inline-block;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    background: #f7f7f7;
+    border-left: solid 6px #106eb7;/*左線*/
+    color: #106eb7;/*文字色*/
+    font-weight: bold;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+		margin-left: -80px;
+}
+.square_btn:active {
+    box-shadow: inset 0 0 2px rgba(128, 128, 128, 0.1);
+    transform: translateY(2px);
+}
+
+
+.star {
+  width: 70px;
+  height: 50px;
+  background: url("../images/star_animation-1.png") no-repeat;
+  background-position: 0 0;
+  cursor: pointer;
+	border:none;
+	text-indent: -9999px;
+}
+.star:hover {
+  background-position: -3519px 0;
+  -webkit-transition: background 1s steps(55);
+  transition: background 1s steps(55);
+}
+.favorited {
+  width: 70px;
+  height: 50px;
+  background: url("../images/star_animation-1.png") no-repeat;
+  background-position: right 5px bottom 5px;
+  cursor: pointer;
+	border:none;
+	text-indent: -9999px;
 }
